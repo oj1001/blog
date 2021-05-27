@@ -32,6 +32,7 @@ class UserPostListView(ListView):
 
 class PostDetailView(DetailView):
 	model=Post 
+	template_name="blog/Post_detail.html"
 
 class PostUpdateView(LoginRequiredMixin,UserPassesTestMixin,UpdateView):
 	model=Post 
