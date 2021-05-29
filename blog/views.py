@@ -15,14 +15,14 @@ class PostListView(ListView):
 	model=Post 
 	template_name="blog/home.html"	#app_name/model_viewtype.html
 	context_object_name="posts"
-	paginate_by=2
+	paginate_by=5
 
 class UserPostListView(ListView):
 	model=Post 
 	template_name="blog/user_post.html"	#app_name/model_viewtype.html
 	context_object_name="posts"
 	ordering=['-date_posted']
-	paginate_by=2
+	paginate_by=5
 
 	def get_queryset(self):
 		user=get_object_or_404(User,username=self.kwargs.get('username'))
